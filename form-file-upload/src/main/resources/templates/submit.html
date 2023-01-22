@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/index.html :: header(title='Other')}">
+</head>
+<body>
+<nav th:replace="~{fragments/index.html :: nav}"/>
+<div class="col-lg-8 mx-auto p-3 py-md-5">
+    <main>
+        <h1>Details</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 text-end">
+                    Date
+                </div>
+                <div class="col">
+                    <span th:text="${date}"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 text-end">
+                    Number
+                </div>
+                <div class="col">
+                    <span th:text="${number}"></span>
+                </div>
+            </div>
+            <div class="row"  th:if="${!empty}">
+                <div class="col-3 text-end">
+                    File name
+                </div>
+                <div class="col">
+                    <span th:text="${filename}"></span>
+                </div>
+            </div>
+            <div class="row" th:if="${!empty}">
+                <div class="col-3 text-end">
+                    File size
+                </div>
+                <div class="col">
+                    <span th:text="${filesize}"></span>
+                </div>
+            </div>
+            <div class="row" th:if="${empty}">
+                <div class="col-3 text-end">
+                    File
+                </div>
+                <div class="col">
+                    No file uploaded
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<footer th:replace="~{fragments/index.html :: footer}">
+</footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/index.html :: header(title='Home')}">
+</head>
+<body>
+<nav th:replace="~{fragments/index.html :: nav}"/>
+<div class="col-lg-8 mx-auto p-3 py-md-5">
+    <main>
+        <h1>Submit a file</h1>
+
+        <div>
+            <form action="#" th:action="@{/submit}" th:object="${formData}" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="date-input" class="form-label">Date select</label>
+                    <select id="date-input" name="date">
+                        <option th:each="date: ${dates}" th:value="${date}" th:text="${date}">
+                        </option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="integer-input" class="form-label">Integer input</label>
+                    <input type="number" name="number" class="form-control" id="integer-input" placeholder="100" value="100" min="10" max="1000">
+                </div>
+                <div class="mb-3">
+                    <label for="file-input" class="form-label">Settings</label>
+                    <input type="file" name="file" class="form-control" id="file-input">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
+<footer th:replace="~{fragments/index.html :: footer}">
+</footer>
+</body>
+</html>

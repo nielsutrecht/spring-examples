@@ -1,0 +1,3 @@
+service:
+    # Username / password = user / pass
+    login : "user:$2y$10$6Q6ZUnD7tpW.t2CtS.8e6uHnAo/vS1A/tI9Vh4SPPOTNhwhE6rJ76"
