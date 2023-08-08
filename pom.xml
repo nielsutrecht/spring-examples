@@ -12,6 +12,7 @@
         <module>security-single-user</module>
         <module>shared</module>
         <module>form-file-upload</module>
+        <module>excel-download</module>
     </modules>
 
     <parent>
